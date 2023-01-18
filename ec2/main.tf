@@ -1,6 +1,6 @@
 resource "aws_instance" "ec2_pv" {
     ami = "ami-0b5eea76982371e91"
-    key_name = "iti"
+    key_name = "first_KP"
     instance_type = var.instance_type
     subnet_id = var.subnet_pv_id
     vpc_security_group_ids = var.security_group
@@ -22,7 +22,7 @@ provisioner "local-exec" {
 
 resource "aws_instance" "ec2_pu" {
     ami = "ami-0b5eea76982371e91"
-    key_name = "iti"
+    key_name = "first_KP"
     instance_type = var.instance_type
     subnet_id = var.subnet_pu_id
     vpc_security_group_ids = var.security_group
@@ -33,7 +33,7 @@ resource "aws_instance" "ec2_pu" {
   connection {
     type     = "ssh"
     user     = "ec2-user"
-    private_key = "${file("./iti.pem")}"
+    private_key = "${file("./first_KP.pem")}"
     host = self.public_ip
   }
   provisioner "remote-exec" {
