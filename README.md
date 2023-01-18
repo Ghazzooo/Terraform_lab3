@@ -1,2 +1,1 @@
-# Terraform_lab3
-Terraform_lab3
+# terraform-la3
